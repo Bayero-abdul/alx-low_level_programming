@@ -11,7 +11,7 @@ int main(void)
 
 	start_lower = 96; 
 	end_lower = 122; 
-	start_upper = 65; 
+	start_upper = 64; 
 	end_upper = 90;
 	while ((++start_lower) <= end_lower)
 	{
