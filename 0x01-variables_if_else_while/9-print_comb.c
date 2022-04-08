@@ -8,15 +8,17 @@
 */
 int main(void)
 {
-	int num_start, num_end, comma;
+	int num_start, num_end, comma, space;
 
 	comma = 44;
+	space = 32;
 	num_start = 48;
 	num_end = 57;
 	while (num_start < num_end)
 	{
 		putchar(num_start);
 		putchar(comma);
+		putchar(space);
 		num_start++;
 	}
 	while (num_start <= num_end)
@@ -24,6 +26,5 @@ int main(void)
 		putchar(num_start);
 		num_start++;
 	}
-	putchar('\n');
 	return (0);
 }
