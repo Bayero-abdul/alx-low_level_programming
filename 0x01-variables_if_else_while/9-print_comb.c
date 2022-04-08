@@ -14,17 +14,15 @@ int main(void)
 	space = 32;
 	num_start = 48;
 	num_end = 57;
-	while (num_start < num_end)
-	{
-		putchar(num_start);
-		putchar(comma);
-		putchar(space);
-		num_start++;
-	}
 	while (num_start <= num_end)
 	{
 		putchar(num_start);
-		num_start++;
+		if (num_start == num_end)
+			break;
+		 putchar(comma);
+		 putchar(space);
+		 num_start++;
 	}
+	putchar('\n');
 	return (0);
 }
