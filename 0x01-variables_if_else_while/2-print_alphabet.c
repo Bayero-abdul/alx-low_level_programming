@@ -8,7 +8,7 @@
 int main(void)
 {
 	int start, end;
-	
+
 	start = 96;
 	end = 122;
 	while ((++start) <= end)
