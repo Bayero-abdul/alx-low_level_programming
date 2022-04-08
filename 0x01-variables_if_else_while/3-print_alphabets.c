@@ -19,7 +19,7 @@ int main(void)
 	}
 	while ((++start_upper) <= end_upper)
 	{
-		putchar(start_upper);	
+		putchar(start_upper);
 	}
 	putchar('\n');
 	return (0);
