@@ -11,8 +11,10 @@ void jack_bauer(void)
 	while (i <= 50)
 	{
 		j = 48;
-		while (j <= 51)
-		{
+		while (j <= 57)
+		{	
+			if (i == 50 && j == 52)
+				break;
 			k = 48;
 			while (k <= 53)
 			{
@@ -33,4 +35,10 @@ void jack_bauer(void)
 		}
 		i++;
 	}
+}
+
+int main(void)
+{
+	jack_bauer();
+	return (0);
 }
