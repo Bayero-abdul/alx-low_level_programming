@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
 * print_most_numbers - prints all single digit numbers of base 10
