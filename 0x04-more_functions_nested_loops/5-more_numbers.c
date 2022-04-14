@@ -12,21 +12,18 @@ void more_numbers(void)
 		i = 0;
 		while (i <= 14)
 		{
+			last_digit = i % 10;
+			first_digit = i;
+
 			if (i > 9)
 			{
-				last_digit = i % 10;
-				first_digit = i;
 				while (first_digit >= 10)
 				{
 					first_digit /= 10;
 				}
 				_putchar('0' + first_digit);
-				_putchar('0' + last_digit);
 			}
-			else
-			{
-				_putchar('0' + i);
-			}
+			_putchar('0' + last_digit);
 			i++;
 		}
 		putchar('\n');
