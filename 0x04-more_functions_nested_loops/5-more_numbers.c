@@ -7,7 +7,7 @@ void more_numbers(void)
 {
 	int i, j, last_digit, first_digit;
 
-	for (j = 0; j < 10; i++)
+	for (j = 0; j < 10; j++)
 	{
 		i = 0;
 		while (i <= 14)
@@ -26,6 +26,6 @@ void more_numbers(void)
 			_putchar('0' + last_digit);
 			i++;
 		}
-		putchar('\n');
+		_putchar('\n');
 	}
 }
