@@ -21,9 +21,9 @@ void more_numbers(void)
 				{
 					first_digit /= 10;
 				}
-				putchar('0' + first_digit);
+				_putchar('0' + first_digit);
 			}
-			putchar('0' + last_digit);
+			_putchar('0' + last_digit);
 			i++;
 		}
 		_putchar('\n');

@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
 * print_most_numbers - prints all single digit numbers of base 10
@@ -13,8 +13,8 @@ void print_most_numbers(void)
 	while (num_start <= num_end)
 	{
 		if (num_start != 50 && num_start != 52)
-			putchar(num_start);
+			_putchar(num_start);
 		num_start++;
 	}
-	putchar('\n');
+	_putchar('\n');
 }
