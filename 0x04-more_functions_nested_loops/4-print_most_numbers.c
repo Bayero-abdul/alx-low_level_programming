@@ -13,8 +13,8 @@ void print_most_numbers(void)
 	while (num_start <= num_end)
 	{
 		if (num_start != 50 && num_start != 52)
-			_putchar(num_start);
+			putchar(num_start);
 		num_start++;
 	}
-	_putchar('\n');
+	putchar('\n');
 }
