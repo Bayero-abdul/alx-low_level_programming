@@ -1,5 +1,6 @@
 *
 !*/
 !*.c
-!*.h 
+!*.h
+3-convert_day.c
 3-main_b
