@@ -13,7 +13,7 @@ void print_times_table(int n)
 		return;
 	for (i = 0; i <= n; i++)
 	{
-		print_zero(i);
+		print_zero(i, n);
 
 		j = 0;
 		ascii_num = '0';
@@ -52,11 +52,12 @@ void print_times_table(int n)
 * print_zero - prints 0 and 3 spaces if i is less than 10
 * and 2 spaces if i is greater than or equals to 10
 * @i: i'th loop
+* @n: n times table
 */
-void print_zero(int i)
+void print_zero(int i, int n)
 {
 	_putchar('0');
-	if (i == 0)
+	if (n == 0)
 		return;
 	_putchar(',');
 
