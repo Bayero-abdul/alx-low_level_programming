@@ -56,6 +56,8 @@ void print_times_table(int n)
 void print_zero(int i)
 {
 	_putchar('0');
+	if (i == 0)
+		break;
 	_putchar(',');
 
 	if (i < 10)
