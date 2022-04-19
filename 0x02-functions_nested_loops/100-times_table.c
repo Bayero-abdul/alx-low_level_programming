@@ -57,7 +57,7 @@ void print_zero(int i)
 {
 	_putchar('0');
 	if (i == 0)
-		break;
+		return;
 	_putchar(',');
 
 	if (i < 10)
