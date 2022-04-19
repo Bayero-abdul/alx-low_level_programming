@@ -46,9 +46,7 @@ void print_times_table(int n)
 		}
 		_putchar('\n');
 	}
-	_putchar('\n');
 }
-
 
 /**
 * print_zero - prints 0 and 3 spaces if i is less than 10
