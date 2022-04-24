@@ -1,5 +1,7 @@
 #include "main.h"
 
+int is_sep(char *c);
+
 /**
 * cap_string - capitalizes all words of a string
 * @str: pointer to the string
@@ -28,8 +30,8 @@ char *cap_string(char *str)
 */
 int is_sep(char *c)
 {
-	char sep[] = {' ', '\t', '\n', '\n', ',', ';', ',',
-								'.', '!', '?', '"', '(', ')', '{', '}'};
+	char sep[] = {' ', '\t', '\n', ',', ';', '.', '!',
+								'?', '"', '(', ')', '{', '}'};
 	char *ptr = sep;
 
 	while (*ptr != '\0')
