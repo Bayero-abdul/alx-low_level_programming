@@ -8,29 +8,18 @@
 */
 void reverse_array(int *a, int n)
 {
-	int i, j;
+	int i, j, key;
 
-	for (i = 0; i < n - 1; i++)
+	for (i = 1; i < n; i++)
 	{
-		for (j = 0; j < (n - 1 - i); j++)
+		key = a[i];
+		j = i - 1;
+
+		while (j >= 0 && a[j] < key)
 		{
-			if (a[j] < a[j + 1])
-				swap_int(&a[j], &a[j + 1]);
+			a[j + 1] = a[j];
+			j--;
 		}
+		a[j + 1] = key;
 	}
-}
-
-
-/**
-* swap_int - swap value of two integers
-* @a: first integer
-* @b: second integer
-*/
-void swap_int(int *a, int *b)
-{
-	int temp;
-
-	temp = *b;
-	*b = *a;
-	*a = temp;
 }
