@@ -8,10 +8,15 @@
 char *cap_string(char *str)
 {
 	int i = 0;
+	int first_char = 0;
 
 	while (str[i] != '\0')
 	{
-		if (is_sep(&str[i]) && (str[i + 1] >= 'a' && str[i + 1] <= 'z'))
+		if (str[first_char] >= 'a' && str[first_char] <= 'z')
+		{
+			str[first_char] = str[first_char] - 32;
+		}
+		else if (is_sep(&str[i]) && (str[i + 1] >= 'a' && str[i + 1] <= 'z'))
 		{
 			str[i + 1] = str[i + 1] - 32;
 		}
@@ -38,8 +43,7 @@ int is_sep(char *c)
 		{
 			return (1);
 		}
-			ptr++;
+		ptr++;
 	}
 	return (0);
 }
-
