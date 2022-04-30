@@ -8,23 +8,27 @@
 int main(void)
 {
 	int i;
-	long int a, b, c;
+	unsigned long a, b;
 
 	a = 1;
 	b = 1;
 
 	for (i = 0; i < 98; i++)
 	{
-		printf("%ld", b);
-		c = a + b;
-		a = b;
-		b = c;
+		if (i == 0)
+			printf("1");
+		else
+		{
+			unsigned long c = a + b;
+			printf("%lu", c);
+			a = b;
+			b = c;
+		}
 
 		if (i != 97)
 			printf(", ");
 		else
 			printf("\n");
-
 	}
 	return (0);
 }
