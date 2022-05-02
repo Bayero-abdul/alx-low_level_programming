@@ -19,9 +19,11 @@ int main(int argc, char *argv[])
 			res *= atoi(argv[i]);
 		}
 		printf("%d\n", res);
+		return (0);
 	}
 	else
+	{
 		printf("Error\n");
-
-	return (0);
+		return (1);
+	}
 }
