@@ -16,7 +16,8 @@ void print_number(int n)
 		n = -n;
 		print_number(n);
 	}
-	else if (n > 0)
+
+	if (n > 0)
 	{
 		if (n / 10 == 0)
 		{
