@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
-	* main - prints all single digit numbers of base 10
-	* using ascii
-	*
-	* Return: 0 if there is no error
-	*/
+* main - prints all single digit numbers of base 10
+* using ascii
+*
+* Return: 0 if there is no error
+*/
 int main(void)
 {
 	  int num_start, num_end;

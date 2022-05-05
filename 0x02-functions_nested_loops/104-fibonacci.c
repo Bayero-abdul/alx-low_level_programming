@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i;
-	long int a, b;
+	long double a, b, c;
 
 	a = 1;
 	b = 1;
@@ -19,8 +19,8 @@ int main(void)
 			printf("1");
 		else
 		{
-			long int c = a + b;
-			printf("%ld", c);
+			c = a + b;
+			printf("%.0Lf", a + b);
 			a = b;
 			b = c;
 		}
