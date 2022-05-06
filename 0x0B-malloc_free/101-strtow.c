@@ -19,7 +19,7 @@ char **strtow(char *str)
 	if (num_of_words == 0)
 		return (NULL);
 
-	strings = malloc(sizeof(char *) * num_of_words + 1);
+	strings = malloc(sizeof(char *) * (num_of_words + 1));
 	if (strings == NULL)
 		return (NULL);
 
@@ -27,7 +27,7 @@ char **strtow(char *str)
 	for (j = 0; j < num_of_words; j++)
 	{
 		len_word = get_len_word(&index, str);
-		strings[j] = malloc(sizeof(char) * len_word + 1);
+		strings[j] = malloc(sizeof(char) * (len_word + 1));
 		if (strings[j] == NULL)
 		{
 			for (; j >= 0; j--)
