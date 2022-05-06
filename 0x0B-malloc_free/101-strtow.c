@@ -14,13 +14,12 @@ char **strtow(char *str)
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-	for (j = 0; str[j] == ' '; j++)
-	{
-		if (str[j] == '\0')
-			return (NULL);
-	}
+
 	num_of_words = count_words(str);
-	strings = malloc(sizeof(char *) * num_of_words);
+	if (num_of_words == 0)
+		return (NULL);
+
+	strings = malloc(sizeof(char *) * num_of_words + 1);
 	if (strings == NULL)
 		return (NULL);
 
@@ -28,7 +27,7 @@ char **strtow(char *str)
 	for (j = 0; j < num_of_words; j++)
 	{
 		len_word = get_len_word(&index, str);
-		strings[j] = malloc(sizeof(char) * len_word);
+		strings[j] = malloc(sizeof(char) * len_word + 1);
 		if (strings[j] == NULL)
 		{
 			for (; j >= 0; j--)
