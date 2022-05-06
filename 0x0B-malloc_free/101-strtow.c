@@ -10,7 +10,7 @@
 char **strtow(char *str)
 {
 	int index, len_word, num_of_words, j, k;
-	char *word, **strings;
+	 char **strings;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
@@ -26,7 +26,10 @@ char **strtow(char *str)
 	index = 0;
 	for (j = 0; j < num_of_words; j++)
 	{
-		len_word = get_len_word(&index, str);
+		while (str[index] == ' ')
+			index++;
+
+		len_word = get_len_word(&str[index]);
 		strings[j] = malloc(sizeof(char) * (len_word + 1));
 		if (strings[j] == NULL)
 		{
@@ -35,39 +38,14 @@ char **strtow(char *str)
 			free(strings);
 			return (NULL);
 		}
-	}
 
-	index = 0;
-	for (j = 0; j < num_of_words; j++)
-	{
-		word = get_word(&index, str);
-		for (k = 0; *word != ' '; k++, word++)
-			strings[j][k] = *word;
+		for (k = 0; k < len_word; k++)
+			strings[j][k] = str[index++];
 		strings[j][k] = '\0';
 	}
 	strings[j] = NULL;
+
 	return (strings);
-}
-
-/**
-* get_word - return pointer pointing to
-* beginning of a word in the string str
-* @str: pointer to string
-* @index: pointer to integer(index)
-* Return: pointer pointing to
-*				 beginning of a word
-*/
-char *get_word(int *index, char *str)
-{
-	char *ptr;
-
-	while (str[*index] == ' ')
-		*index = *index + 1;
-	ptr = &str[*index];
-	while (str[*index] != ' ')
-		*index = *index + 1;
-
-	return (ptr);
 }
 
 /**
@@ -96,21 +74,16 @@ int count_words(char *s)
 
 /**
 * get_len_word - Gets the length of a word in the string
-* @index: pointer to integer(index)
 * @str: pointer to string
 * Return: length of the word
 */
-int get_len_word(int *index, char *str)
+int get_len_word(char *str)
 {
 	int len = 0;
 
-	while (str[*index] == ' ')
-		*index = *index + 1;
-
-	while (str[*index] != ' ')
+	while (*str++ != ' ')
 	{
 		len++;
-		*index = *index + 1;
 	}
 	return (len);
 }
