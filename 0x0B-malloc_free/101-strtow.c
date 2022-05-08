@@ -71,7 +71,6 @@ int count_words(char *s)
 			count++;
 		s++;
 	}
-	printf("number of words: %d\n", count);
 	return (count);
 }
 
@@ -84,10 +83,9 @@ int get_len_word(char *str)
 {
 int len = 0;
 
-while (*str++ != ' ')
+while (*str++ != ' ' && *str != '\0')
 {
 len++;
 }
-printf("word length: %d\n", len);
 return (len);
 }
