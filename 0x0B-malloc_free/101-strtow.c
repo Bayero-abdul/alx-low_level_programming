@@ -88,6 +88,5 @@ int get_len_word(char *str)
 		len++;
 		str++;
 	}
-	printf("length word: %d\n", len);
 	return (len);
 }
