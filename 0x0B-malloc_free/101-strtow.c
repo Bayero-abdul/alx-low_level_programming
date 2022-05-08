@@ -21,7 +21,10 @@ char **strtow(char *str)
 
 	strings = malloc(sizeof(char *) * (num_of_words + 1));
 	if (strings == NULL)
+	{
+		free(strings);
 		return (NULL);
+	}
 
 	index = 0;
 	for (j = 0; j < num_of_words; j++)
@@ -68,7 +71,7 @@ int count_words(char *s)
 			count++;
 		s++;
 	}
-
+	printf("number of words: %d\n", count);
 	return (count);
 }
 
@@ -79,11 +82,12 @@ int count_words(char *s)
 */
 int get_len_word(char *str)
 {
-	int len = 0;
+int len = 0;
 
-	while (*str++ != ' ')
-	{
-		len++;
-	}
-	return (len);
+while (*str++ != ' ' && *str != '\0')
+{
+len++;
+}
+printf("word length: %d\n", len);
+return (len);
 }
