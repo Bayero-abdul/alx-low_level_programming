@@ -84,7 +84,7 @@ int get_len_word(char *str)
 {
 int len = 0;
 
-while (*str++ != ' ' && *str != '\0')
+while (*str++ != ' ')
 {
 len++;
 }
