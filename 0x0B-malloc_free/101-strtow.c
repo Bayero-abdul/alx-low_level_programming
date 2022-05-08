@@ -81,11 +81,13 @@ int count_words(char *s)
 */
 int get_len_word(char *str)
 {
-int len = 0;
+	int len = 0;
 
-while (*str++ != ' ' && *str != '\0')
-{
-len++;
-}
-return (len);
+	while (*str != ' ' && *str != '\0')
+	{
+		len++;
+		str++;
+	}
+	printf("length word: %d\n", len);
+	return (len);
 }
