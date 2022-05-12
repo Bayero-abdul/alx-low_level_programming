@@ -21,5 +21,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	d.owner = owner;
 
 	cpy = &d;
+	if (cpy == NULL)
+		return (NULL);
+
 	return (cpy);
 }
