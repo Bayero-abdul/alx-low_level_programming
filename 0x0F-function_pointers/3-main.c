@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "3-calc.h"
 #include <stdlib.h>
-#include <string.h>
 
 /**
 * main - performs simple operations
@@ -25,7 +24,7 @@ int main(int argc, char *argv[])
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 
-	if (get_op_func(op) == NULL || op[1] != '\0')
+	if (op[1] != '\0' || get_op_func(op) == NULL)
 	{
 		printf("Error\n");
 	  exit(99);
