@@ -30,12 +30,12 @@ void print_all(const char * const format, ...)
 									break;
 				case 's':
 					string = va_arg(ap, char*);
-					if (string)
+					if (string == NULL)
 					{
-						printf("%s", string);
+						printf("(nil)");
 						break;
 					}
-					printf("(nil)");
+					printf("%s", string);
 					break;
 			}
 			print_separator(format[i + 1]);
@@ -72,7 +72,7 @@ void print_separator(char c)
 		case '\0':
 			break;
 		default:
-				printf(", ");
-				break;
+			printf(", ");
+			break;
 	}
 }
