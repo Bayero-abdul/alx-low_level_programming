@@ -36,7 +36,6 @@ void print_all(const char * const format, ...)
 						break;
 					}
 					printf("%s", string);
-					break;
 			}
 			print_separator(format[i + 1]);
 		}
@@ -76,3 +75,4 @@ void print_separator(char c)
 			break;
 	}
 }
+
