@@ -8,13 +8,11 @@
 */
 void print_all(const char * const format, ...)
 {
-	unsigned int i;
+	unsigned int i = 0;
 	va_list ap;
 	char *string;
 
 	va_start(ap, format);
-	i = 0;
-
 	while (format[i] != '\0')
 	{
 		if (get_type(format[i]))
@@ -24,25 +22,29 @@ void print_all(const char * const format, ...)
 				case 'c':
 					printf("%c", va_arg(ap, int));
 									break;
-
 				case 'i':
 					printf("%d", va_arg(ap, int));
 									break;
-
 				case 'f':
 					printf("%f", va_arg(ap, double));
 									break;
-
 				case 's':
 					string = va_arg(ap, char*);
 					if (string)
+					{
 						printf("%s", string);
+						break;
+					}
 					printf("(nil)");
+			}
+			switch (format[i + 1])
+			{
+				case '\0':
+					break;
+				default:
+					printf(", ");
 					break;
 			}
-
-			if (format[i + 1] != '\0')
-				printf(", ");
 		}
 		i++;
 	}
