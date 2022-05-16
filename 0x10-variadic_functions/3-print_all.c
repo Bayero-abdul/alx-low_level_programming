@@ -36,18 +36,14 @@ void print_all(const char * const format, ...)
 						break;
 					}
 					printf("(nil)");
-			}
-			switch (format[i + 1])
-			{
-				case '\0':
-					break;
-				default:
-					printf(", ");
 					break;
 			}
+			print_separator(format[i + 1]);
 		}
 		i++;
 	}
+	printf("\n");
+	va_end(ap);
 }
 
 /**
@@ -63,4 +59,20 @@ int get_type(char c)
 	while (types[i] != '\0' && types[i] != c)
 		i++;
 	return (types[i]);
+}
+
+/**
+* print_separator - print separator
+* @c: character
+*/
+void print_separator(char c)
+{
+	switch (c)
+	{
+		case '\0':
+			break;
+		default:
+				printf(", ");
+				break;
+	}
 }

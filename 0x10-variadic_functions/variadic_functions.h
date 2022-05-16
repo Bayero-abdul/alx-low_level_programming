@@ -7,5 +7,6 @@ void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 int get_type(char c);
+void print_separator(char c);
 
 #endif
