@@ -36,8 +36,9 @@ void print_all(const char * const format, ...)
 						break;
 					}
 					printf("%s", string);
+					break;
 			}
-			print_separator(format[i + 1]);
+			print_sep(format[i + 1]);
 		}
 		i++;
 	}
@@ -52,7 +53,7 @@ void print_all(const char * const format, ...)
 */
 int get_type(char c)
 {
-	int i = 0;
+	unsigned int i = 0;
 	char types[] = {'c', 'i', 'f', 's', '\0'};
 
 	while (types[i] != '\0' && types[i] != c)
@@ -61,10 +62,10 @@ int get_type(char c)
 }
 
 /**
-* print_separator - print separator
+* print_sep - print separator
 * @c: character
 */
-void print_separator(char c)
+void print_sep(char c)
 {
 	switch (c)
 	{
@@ -75,4 +76,3 @@ void print_separator(char c)
 			break;
 	}
 }
-
