@@ -1,4 +1,5 @@
 #include "main.h"
+#include <math.h>
 
 /**
 * get_bit - compute the value of a bit at a given index
@@ -8,6 +9,8 @@
 */
 int get_bit(unsigned long int n, unsigned int index)
 {
+	if (n == NAN || index == NAN)
+		return (-1);
 	n = (n & (1 << index)) != 0;
 	return (n);
 }
