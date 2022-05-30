@@ -9,8 +9,10 @@
 */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	if (n == NAN || index == NAN)
+	if ((n < 48 && n > 57) || (index < 48 && index > 57))
 		return (-1);
 	n = (n & (1 << index)) != 0;
+	if (!n)
+		return (-1);
 	return (n);
 }
