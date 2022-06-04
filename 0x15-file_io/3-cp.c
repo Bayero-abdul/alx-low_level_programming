@@ -38,10 +38,9 @@ int main(int argc, char **argv)
 	}
 
 	while ((n = read(r, buf, 1024)) > 0)
-	{
-		buf[n] = '\0';
 		write(w, buf, n);
-	}
+
+	buf[n] = '\0';
 
 	if (close(w) == -1)
 	{
