@@ -15,7 +15,7 @@
 int main(int argc, char **argv)
 {
 	ssize_t w, r, n;
-	char buf[1025];
+	char buf[1024];
 
 	if (argc != 3)
 	{
