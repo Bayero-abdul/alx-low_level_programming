@@ -38,7 +38,11 @@ int main(int argc, char **argv)
 	}
 
 	while ((n = read(r, buf, 1024)) > 0)
-		write(w, buf, n);
+	{
+		if (write(w, buf, n) != n)
+			break;
+	}
+
 	buf[n] = '\0';
 
 	close_file(close(w), &w);
