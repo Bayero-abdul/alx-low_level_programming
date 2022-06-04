@@ -42,7 +42,6 @@ int main(int argc, char **argv)
 		if (write(w, buf, n) == n)
 			continue;
 	}
-		
 	buf[n] = '\0';
 
 	close_file(close(w), &w);
@@ -51,12 +50,16 @@ int main(int argc, char **argv)
 	return (0);
 }
 
+/**
+* close_file - closes a file
+* @n: close() return value
+* @m: pointer to ssize_t
+*/
 void close_file(int n, ssize_t *m)
 {
-	 if (n == -1)
-	 {
-		 dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", *m);
-		 exit(100);
-	 }
+	if (n == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", *m);
+		exit(100);
+	}
 }
-
