@@ -39,11 +39,10 @@ int main(int argc, char **argv)
 
 	while ((n = read(r, buf, 1024)) > 0)
 	{
+		buf[n] = '\0';
 		if (write(w, buf, n) != n)
 			break;
 	}
-
-	buf[n] = '\0';
 
 	close_file(close(w), &w);
 	close_file(close(r), &r);
