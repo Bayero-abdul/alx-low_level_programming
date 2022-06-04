@@ -15,7 +15,7 @@
 int main(int argc, char **argv)
 {
 	ssize_t w, r, n;
-	char buf[1024];
+	char buf[1025];
 
 	if (argc != 3)
 	{
@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	w = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 00664);
+	w = creat(argv[2], 0664);
 	if (w == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
@@ -39,7 +39,8 @@ int main(int argc, char **argv)
 
 	while ((n = read(r, buf, 1024)) > 0)
 	{
-		write(w, buf, 1024);
+		buf[n] = '\0';
+		write(w, buf, n);
 	}
 
 	if (close(w) == -1)
@@ -52,6 +53,5 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", r);
 		exit(100);
 	}
-
 	return (0);
 }
