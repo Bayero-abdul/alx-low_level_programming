@@ -44,13 +44,13 @@ int main(int argc, char **argv)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-		buf[n] = '\0';
 		if (write(w, buf, n) != n)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
+	buf[n] = '\0';
 	close_file(close(w), &w);
 	close_file(close(r), &r);
 	return (0);
