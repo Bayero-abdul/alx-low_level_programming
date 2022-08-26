@@ -8,5 +8,5 @@ int _subtrahend(int n, int i);
 int is_divisible(int num, int div);
 int is_prime_number(int n);
 int is_palindrome(char *s);
-char *slice(char str[], char *buf, int start, int end);
+char *slice(char str[], char *buf, int start, int end, int idx);
 int _strlen(char *s);
