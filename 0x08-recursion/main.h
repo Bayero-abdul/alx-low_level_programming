@@ -7,3 +7,6 @@ int _pow_recursion(int x, int y);
 int _subtrahend(int n, int i);
 int is_divisible(int num, int div);
 int is_prime_number(int n);
+int is_palindrome(char *s);
+char *slice(char str[], char *buf, int start, int end);
+int _strlen(char *s);
