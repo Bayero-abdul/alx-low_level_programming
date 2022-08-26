@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * is_palindrome - Checks if string is a palindrome
@@ -7,7 +8,7 @@
  */
 int is_palindrome(char *s)
 {
-	int i, j, length;
+	int i, j, length, idx;
 	char *str, buf[100];
 
 	length = _strlen(s);
@@ -20,7 +21,8 @@ int is_palindrome(char *s)
 	{
 		return (0);
 	}
-	str = slice(s, buf, i + 1, j - 1);
+	idx = 0;
+	str = slice(s, buf, i + 1, j - 1, idx);
 	return (is_palindrome(str));
 }
 
@@ -30,21 +32,21 @@ int is_palindrome(char *s)
  * @buf: pointer to a buffer
  * @start: an integer
  * @end: an integer
+ * @idx: index
  * Return: sliced string
  */
-char *slice(char str[], char *buf, int start, int end)
+char *slice(char str[], char *buf, int start, int end, int idx)
 {
-	int i = 0;
-
-	while (start <= end)
+	if (start > end)
 	{
-		buf[i] = str[start];
-		i++;
-		start++;
+		buf[idx] = '\0';
+		return (buf);
 	}
 
-	buf[i] = '\0';
-	return (buf);
+	buf[idx] = str[start];
+	start++;
+	idx++;
+	return (slice(str, buf, start, end, idx));
 }
 
 /**
@@ -54,10 +56,10 @@ char *slice(char str[], char *buf, int start, int end)
  */
 int _strlen(char *s)
 {
-	int count = 0;
-
-	while (*s++ != '\0')
-		count++;
-
-	return (count);
+	if (*s == '\0')
+	{
+		return (0);
+	}
+	s++;
+	return (1 + _strlen(s));
 }
