@@ -14,11 +14,21 @@ size_t print_dlistint(const dlistint_t *h)
 	if (!h)
 		return (num_of_nodes);
 
-	while (h)
+	while (h->next)
 	{
 		printf("%d\n", h->n);
 		num_of_nodes++;
 		h = h->next;
 	}
+
+	/*
+	printf("reverse backd\n");
+
+	while (h)
+	{
+		printf("%d\n", h->n);
+		h = h->prev;
+	}*/
+
 	return (num_of_nodes);
 }
