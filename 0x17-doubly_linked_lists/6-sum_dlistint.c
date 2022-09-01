@@ -7,15 +7,14 @@
  * @head: pointer to a double linked list
  * Return: sum
  */
-int sum_dlistint(dlistint_t *head);
+int sum_dlistint(dlistint_t *head)
 {
-	unsigned int i;
 	int sum;
 
 	if (!head)
-		return (NULL);
+		return (0);
 
-	sum = 0
+	sum = 0;
 	while (head)
 	{
 		sum += head->n;
