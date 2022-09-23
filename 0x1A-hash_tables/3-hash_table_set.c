@@ -13,9 +13,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new_node;
 	int index;
-	char *tok = strtok((char * __restrict__)key, " \t\n");
 
-	if (ht == NULL || key == NULL || tok == NULL || value == NULL)
+	if (ht == NULL || key == NULL || *key == '\0')
 		return (0);
 
 	new_node = malloc(sizeof(*new_node));
