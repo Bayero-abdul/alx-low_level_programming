@@ -202,3 +202,31 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
+
+
+
+/**
+ * shash_table_delete - free allocated memories
+ * @ht: hash table
+ * Return: void
+ */
+void shash_table_delete(shash_table_t *ht)
+{
+	unsigned long i;
+	shash_node_t *walk, *temp;
+
+	for (i = 0; i < ht->size; i++)
+	{
+		walk = ht->array[i];
+		while (walk != NULL)
+		{
+			temp = walk;
+			walk = walk->next;
+			free(temp->key);
+			free(temp->value);
+			free(temp);
+		}
+	}
+	free(ht->array);
+	free(ht);
+}
