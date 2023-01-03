@@ -1,6 +1,5 @@
 #include "search_algos.h"
 
-
 /**
  * linear_search - searches for every single value
  * @array: an array of integers
