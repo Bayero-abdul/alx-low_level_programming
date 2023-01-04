@@ -49,6 +49,9 @@ int advanced_binary(int *array, size_t size, int value)
 {
 	size_t l, h;
 
+	if (array == NULL)
+		return (-1);
+
 	l = 0;
 	h = size - 1;
 	return (recursive_binary_search(array, l, h, value));
